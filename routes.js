@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Route GET : Récupérer les taux de change stockés
 router.get('/taux', (req, res) => {
-    const sql = "SELECT * FROM taux ORDER BY date_scraping DESC LIMIT 10";
+    const sql = "SELECT * FROM taux ORDER BY date_scraping DESC LIMIT 20";
     db.query(sql, (err, results) => {
         if (err) {
             return res.status(500).json({ error: "Erreur serveur" });
